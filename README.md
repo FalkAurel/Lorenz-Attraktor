@@ -1,6 +1,18 @@
 # Lorenz-Attraktor
 Implementation von einem 3D-Model eines Lorenz-Attraktors. 
 
+# Lorenz-Formel
+
+Verwendete Formel
+
+$$
+\begin{aligned}
+\frac{dx}{dt} &= \sigma(y-x) \\
+\frac{dy}{dt} &= x(\rho-z)-y \\
+\frac{dz}{dt} &= xy-\beta z
+\end{aligned}
+$$
+
 # Bewegliches Model
 Steuerung des Models ist durch die Pfeiltasten gewährleistet.
 ![WhatsApp Bild 2023-08-01 um 20 54 17](https://github.com/FalkAurel/Lorenz-Attraktor/assets/137809006/93719161-f97a-40d6-ab3a-d557d7b39c1d)
