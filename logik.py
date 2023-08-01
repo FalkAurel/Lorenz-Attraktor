@@ -1,6 +1,5 @@
 from scipy.integrate import odeint
 import numpy as np
-import matplotlib.pyplot as plt
 
 def lorenzAttraktor(t, u0 = [1, 1, 1], sigma=10, rho=28, beta=8/3):
     def lorenz(u, t):
@@ -53,12 +52,3 @@ def _rotationZ(points, angle):
                        [np.sin(angle), np.cos(angle), 0],
                        [0, 0, 1]])
     return np.matmul(matrix, points).squeeze()
-
-"""
-t = np.arange(0, 100, 0.01)
-x, y, z = lorenzAttraktor(t)
-data = rotation(points=projectionMatrixCalculation(x, y, z))#, rotY=12, rotZ = 23)
-#data = np.squeeze(data)
-plt.plot(data[:, 0], data[:, 1])
-plt.show()
-"""
