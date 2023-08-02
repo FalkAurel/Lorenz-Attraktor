@@ -4,7 +4,7 @@ from logik import *
 
 pygame.init()
 
-width, height = 1000, 1000
+width, height = 1000, 800
 window = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Lorenz Attractor Simulation")
 
@@ -35,17 +35,17 @@ t = np.linspace(0, 100, 10000)
 punkte = projectionMatrixCalculation(*lorenzAttraktor(t))
 
 def drawPoints(points):
+    min_x, max_x = np.min(points[:, 0]), np.max(points[:, 0])
+    min_y, max_y = np.min(points[:, 1]), np.max(points[:, 1])
     for p in points:
         x, y = p[0], p[1]
         screen_pos = (int(width / 2 + x * 20), int(height / 2 - y * 20))
         if any(screen_pos) <= 0 or any(screen_pos) > width:
             continue
-        # Normalize x and y to the range [0, 1]
-        x_normalized = (x - np.min(points[:, 0])) / (np.max(points[:, 0]) - np.min(points[:, 0]))
-        y_normalized = (y - np.min(points[:, 1])) / (np.max(points[:, 1]) - np.min(points[:, 1]))
-        color = (int(x_normalized * 255), int(y_normalized * 255), 100) 
+        x_normalized = (x - min_x) / (max_x - min_x)
+        y_normalized = (y - min_y) / (max_y - min_y)
+        color = (int(x_normalized * 255), int(y_normalized * 255), 100)
         pygame.draw.circle(window, color, screen_pos, 1)
-
 
 while True:
     window.fill((0, 0, 0))
