@@ -14,6 +14,8 @@ $$
 $$
 
 # Bewegliches Model
+![showcaseGIF](https://github.com/FalkAurel/Lorenz-Attraktor/assets/137809006/a56ea5b2-30c4-43cc-b07f-eebf624f8b56)
+
 Steuerung des Models ist durch die Pfeiltasten gewährleistet.
 ![WhatsApp Bild 2023-08-01 um 20 54 17](https://github.com/FalkAurel/Lorenz-Attraktor/assets/137809006/93719161-f97a-40d6-ab3a-d557d7b39c1d)
 
